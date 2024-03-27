@@ -26,7 +26,7 @@ import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react"; // Import useState and useEffect
 import Result from "./Components/Result";
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
 export default function Home({ searchParams }) {
   const [results, setResults] = useState([]); // Define state for results
@@ -41,7 +41,7 @@ export default function Home({ searchParams }) {
   async function fetchData() {
     try {
       const url = `https://api.themoviedb.org/3${
-        genre === "fetchTopRated" ? `/movie/top_rated` : `/trending/all/week`
+        genre === 'fetchTopRated' ? `/movie/top_rated` : `/trending/all/week`
       }?api_key=${API_KEY}&language=en-US&page=1`;
       console.log("Fetching data from:", url); // Log the URL being fetched
       const res = await fetch(url);

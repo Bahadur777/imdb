@@ -36,12 +36,12 @@ export default function Home({ searchParams }) {
   useEffect(() => {
     // Use useEffect to fetch data when component mounts or genre changes
     fetchData();
-  }, []);
+  }, ['genre']);
 
   async function fetchData() {
     try {
       const url = `https://api.themoviedb.org/3${
-        genre === 'fetchTopRated' ? `/movie/top_rated` : `/trending/all/week`
+        genre === 'fetchTopRated' ? `/movie/top_rated`:`/trending/all/week`
       }?api_key=${API_KEY}&language=en-US&page=1`;
       console.log("Fetching data from:", url); // Log the URL being fetched
       const res = await fetch(url);

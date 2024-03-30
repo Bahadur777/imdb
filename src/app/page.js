@@ -24,7 +24,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react"; // Import useState and useEffect
-import Result from "./Components/Result";
+import Result from "@/Components/Result";
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 

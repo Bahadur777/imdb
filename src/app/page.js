@@ -51,7 +51,7 @@ export default function Home({ searchParams }) {
       }
   
       const data = await res.json();
-      console.log("Data from API:", data); // Log the data obtained from the API
+      console.log("Data from API:", data); 
       const results = data.results;
       setResults(results); // Update results state with fetched data
     } catch (error) {
